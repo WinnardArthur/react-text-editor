@@ -11,7 +11,7 @@ function App() {
       <TextEditor setDesc={setDesc}/>
 
       <div className='content'>
-        {parser(desc)}
+        <div dangerouslySetInnerHTML={{__html: desc}}/>
       </div>
 
     </div>
