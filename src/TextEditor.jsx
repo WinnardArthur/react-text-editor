@@ -96,12 +96,18 @@ const MenuBar = ({ editor }) => {
 }
 
 
-function TextEditor() {
+function TextEditor({ setDesc }) {
     const editor = useEditor({
         extensions: [
             StarterKit, Underline
         ],
-        content: ''
+        content: '',
+        onUpdate: ({editor}) => {
+            const data1 = editor.getHTML();
+            const data2 = editor.getJSON();
+
+            setDesc(data1)
+        }
     })
 
   return (
